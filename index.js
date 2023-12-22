@@ -86,3 +86,56 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.log("Financial Analysis:");
+
+var numberOfMonths = finances.length;
+console.log("Total Months: " + numberOfMonths);
+
+var netTotal = 0;
+for (var i = 0; i < finances.length; i++) {
+  netTotal += finances[i][1];
+}
+console.log("Net Total Profit/Losses: " + netTotal);
+
+var totalChange = 0;
+for (var i = 1; i < finances.length; i++) {
+
+  var change = finances[i][1] - finances[i - 1][1];
+  totalChange += change;
+
+var averageChange = totalChange / (finances.length - 1);
+console.log("Average Change in Profit/Losses: " + averageChange);
+}
+
+var greatestIncrease = 0;
+var greatestIncreaseDate;
+
+for (var i = 1; i < finances.length; i++) {
+  var change = finances[i][1] - finances[i - 1][1];
+
+  if (change > greatestIncrease) {
+    greatestIncrease = change;
+    greatestIncreaseDate = finances[i][0];
+  }
+}
+
+console.log("Greatest Increase in Profit/Losses:");
+console.log("Date: " + greatestIncreaseDate);
+console.log("Amount: " + greatestIncrease);
+
+var greatestDecrease = 0;
+var greatestDecreaseDate;
+for (var i = 1; i < finances.length; i++) {
+  var change = finances[i][1] - finances[i - 1][1];
+
+  if (change < greatestDecrease) {
+    greatestDecrease = change;
+    greatestDecreaseDate = finances[i][0];
+  }
+}
+
+console.log("Greatest Decrease in Profit/Losses:");
+console.log("Date: " + greatestDecreaseDate);
+console.log("Amount: " + greatestDecrease);
+
