@@ -12,5 +12,6 @@ This simple JavaScript script performs a basic financial analysis using an array
 4. Run the script by executing the following command:
 
 ## Link
- 
+ https://github.com/ryan00724/Console-Finances
+ https://ryan00724.github.io/Console-Finances/
 
